@@ -9,3 +9,5 @@ print('this is also a string')
 print("I'm going on a run")
 print('hello world')
 print('hello \n world')
+
+print(len('I am'))
