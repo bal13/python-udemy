@@ -86,8 +86,10 @@ def space_check(board, position):
 #print(space_check(test_board, 9))
 
 def full_board_check(board):
-    
-    return not(" " in board)
+    for i in range(1,10):
+        if space_check(board, i):
+            return False
+    return True
 
 #print(full_board_check(test_board))
 
@@ -140,10 +142,14 @@ while True:
 
         player_current_choice = player_choice(board)
         place_marker(board, current_marker, player_current_choice)
-
+        display_board(board)
         if(win_check(board, current_marker)):
-            display_board(board)
+            
             print(f"{current_marker} has won the game!")
+            break
+
+        if full_board_check(board):
+            print("Game is draw!")
             break
 
         current_marker = switch_marker(current_marker)
