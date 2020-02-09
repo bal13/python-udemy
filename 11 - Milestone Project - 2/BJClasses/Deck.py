@@ -1,19 +1,26 @@
 from Card import Card
+import Constants
+import random
 
 
 class Deck:
-    suit_types = ["clubs", "diamonds", "hearts", "spades"]
-    figure_types = ['ace', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'jack', 'queen', 'king']
     cards = []
 
     def __init__(self):
-        # TODO: Feltölteni a cards tömböt suit-figure tuple-ökkel
-        pass
+        for suit in Constants.suit_types:
+            for figure in Constants.figure_values:
+                card = Card(suit, figure)
+                self.cards.append(card)
+        self.shuffle()
+
+    def __str__(self):
+        deck_string = ""
+        for card in self.cards:
+            deck_string += str(card) + "\n"
+        return "CARDS IN DECK: \n" + deck_string
 
     def shuffle(self):
-        # TODO
-        pass
+        random.shuffle(self.cards)
 
     def give_card(self):
-        # TODO
-        pass
+        return self.cards.pop()
