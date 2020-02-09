@@ -1,4 +1,4 @@
-class Dog():
+class Dog:
     # CLASS OBJECT ATTRIBUTE
     # SAME FOR ANY INSTANCE OF THE CLASS
     species = "mammal"
@@ -25,7 +25,7 @@ print(my_dog.species)
 my_dog.bark(10)
 
 
-class Circle():
+class Circle:
     # CLASS OBJECT ATTRIBUTE
     pi = 3.14
 
