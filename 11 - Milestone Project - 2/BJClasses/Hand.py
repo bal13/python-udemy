@@ -8,7 +8,7 @@ class Hand:
     point_value_ace_11 = 0
 
     def __init__(self):
-        pass
+        self.cards = []
 
     def __str__(self):
         hand_string = ""
